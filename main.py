@@ -12,6 +12,7 @@ screen.tracer(0)
 tom = Snake()
 tom.make_snake()
 is_game_running = True
+tom.turn_right()
 while is_game_running:
     screen.update()
     time.sleep(0.1)

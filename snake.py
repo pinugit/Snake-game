@@ -28,3 +28,6 @@ class Snake:
             # assigning tht x and y coordinate value to the current segment
             segment_list[i].goto(new_x, new_y)
         segment_list[0].forward(MOVE_DISTANCE)
+
+    def turn_right(self):
+        self.segment_list[0].right(90)
