@@ -19,12 +19,11 @@ class Snake:
 
     def move(self):
         segment_list = self.segments_list
+        for i in range(len(segment_list) - 1, 0, -1):
+            # getting the x coordinate value of it's front segment from the segment list
+            new_x = segment_list[i - 1].xcor()
+            # getting the y coordinate value of it's front segment from the segment list
+            new_y = segment_list[i - 1].ycor()
+            # assigning tht x and y coordinate value to the current segment
+            segment_list[i].goto(new_x, new_y)
         segment_list[0].forward(20)
-        while True:
-            for i in range(len(segment_list) - 1, 0, -1):
-                # getting the x coordinate value of it's front segment from the segment list
-                new_x = segment_list[i - 1].xcor()
-                # getting the y coordinate value of it's front segment from the segment list
-                new_y = segment_list[i - 1].ycor()
-                # assigning tht x and y coordinate value to the current segment
-                segment_list[i].goto(new_x, new_y)
