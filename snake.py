@@ -1,4 +1,5 @@
 from turtle import Turtle
+MOVE_DISTANCE = 20
 
 
 class Snake:
@@ -26,4 +27,4 @@ class Snake:
             new_y = segment_list[i - 1].ycor()
             # assigning tht x and y coordinate value to the current segment
             segment_list[i].goto(new_x, new_y)
-        segment_list[0].forward(20)
+        segment_list[0].forward(MOVE_DISTANCE)
