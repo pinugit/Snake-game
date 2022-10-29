@@ -1,19 +1,22 @@
-from turtle import Turtle, Screen, screensize
+from turtle import Turtle, Screen
+import time
+
+from snake import Snake
 
 screen = Screen()
-
 
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My turtle game")
+screen.tracer(0)
+tom = Snake()
+tom.total_segments = 3
+tom.make_snake()
+is_game_running = True
 
-# starting_position = [(0, 0), (-20, 0), (-40, 0)]
-
-# for positon in starting_position:
-#     segement = Turtle(shape="square")
-#     segement.color("white")
-#     segement.penup()
-#     segement.goto(positon)
-
+while is_game_running:
+    screen.update()
+    time.sleep(0.5)
+    tom.move()
 
 screen.exitonclick()
