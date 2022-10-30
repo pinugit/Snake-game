@@ -1,5 +1,9 @@
 from turtle import Turtle
 MOVE_DISTANCE = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 
 class Snake:
@@ -29,5 +33,36 @@ class Snake:
             segment_list[i].goto(new_x, new_y)
         segment_list[0].forward(MOVE_DISTANCE)
 
+    def grow(self):
+        a_segment = Turtle(shape="square")
+        a_segment.color("white")
+        a_segment.penup()
+        self.segments_list.append(a_segment)
+
+    def turn_up(self):
+        self.head = self.segments_list[0]
+        if self.head.heading() == DOWN:
+            pass
+        else:
+            self.head.seth(UP)
+
+    def turn_down(self):
+        self.head = self.segments_list[0]
+        if self.head.heading() == UP:
+            pass
+        else:
+            self.head.seth(DOWN)
+
     def turn_right(self):
-        self.segment_list[0].right(90)
+        self.head = self.segments_list[0]
+        if self.head.heading() == LEFT:
+            pass
+        else:
+            self.head.seth(RIGHT)
+
+    def turn_left(self):
+        self.head = self.segments_list[0]
+        if self.head.heading() == RIGHT:
+            pass
+        else:
+            self.head.seth(LEFT)
