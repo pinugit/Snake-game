@@ -35,8 +35,8 @@ class Snake:
 
     def grow(self):
         a_segment = Turtle(shape="square")
-        a_segment.color("white")
         a_segment.penup()
+        a_segment.color("white")
         self.segments_list.append(a_segment)
 
     def turn_up(self):

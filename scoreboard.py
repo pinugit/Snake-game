@@ -14,3 +14,7 @@ class ScoreBoard(Turtle):
     def write_score(self, score):
         self.clear()
         self.write(f"Score : {score}", font=(15))
+
+    def game_over(self):
+        self.home()
+        self.write("game over", align="center", font=(100))
